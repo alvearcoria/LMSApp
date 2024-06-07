@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngx-one-column-layout',
+  selector: 'lms-one-column-layout',
   styleUrls: ['./one-column.layout.scss'],
   template: `
     <nb-layout windowMode>
       <nb-layout-header fixed>
-        <ngx-header></ngx-header>
+        <lms-header></lms-header>
       </nb-layout-header>
 
       <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
@@ -18,7 +18,7 @@ import { Component } from '@angular/core';
       </nb-layout-column>
 
       <nb-layout-footer fixed>
-        <ngx-footer></ngx-footer>
+        <lms-footer></lms-footer>
       </nb-layout-footer>
     </nb-layout>
   `,

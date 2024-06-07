@@ -2,6 +2,7 @@ import {Component, OnDestroy} from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators' ;
 import { SolarData } from '../../@core/data/solar';
+import { AuthService } from '../../auth/auth.service';
 
 interface CardSettings {
   title: string;
@@ -10,7 +11,7 @@ interface CardSettings {
 }
 
 @Component({
-  selector: 'ngx-dashboard',
+  selector: 'lms-dashboard',
   styleUrls: ['./dashboard.component.scss'],
   templateUrl: './dashboard.component.html',
 })
@@ -79,7 +80,7 @@ export class DashboardComponent implements OnDestroy {
   };
 
   constructor(private themeService: NbThemeService,
-              private solarService: SolarData) {
+              private solarService: SolarData, private auth: AuthService) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
@@ -91,6 +92,10 @@ export class DashboardComponent implements OnDestroy {
       .subscribe((data) => {
         this.solarValue = data;
       });
+  }
+  cerrar(){
+    this.auth.logout();
+
   }
 
   ngOnDestroy() {

@@ -1,0 +1,20 @@
+<div class="course" *ngIf="course">
+  <nb-card>
+    <nb-card-header>{{ course.title }} <nb-progress-bar [value]="progress" status="success"></nb-progress-bar> </nb-card-header>
+    <nb-card-body>
+      <p>{{ course.description }}</p>
+      <div class="lessons">
+        <h2>Temario</h2>
+        <nb-accordion>
+          <nb-accordion-item *ngFor="let lesson of course.lessons">
+            <nb-accordion-item-header>{{ lesson.title }}</nb-accordion-item-header>
+            <nb-accordion-item-body>
+              <p>{{ lesson.previewContent }}</p>
+              <button nbButton status="primary" (click)="viewLesson(lesson.id)">Ver video</button>
+            </nb-accordion-item-body>
+          </nb-accordion-item>
+        </nb-accordion>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngx-chartjs',
+  selector: 'lms-chartjs',
   styleUrls: ['./chartjs.component.scss'],
   templateUrl: './chartjs.component.html',
 })

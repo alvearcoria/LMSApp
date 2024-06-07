@@ -1,0 +1,19 @@
+<div class="lesson" *ngIf="lesson">
+  <nb-card>
+    <nb-card-header>{{ lesson.title }}</nb-card-header>
+    <nb-card-body>
+      <div class="lesson-content">
+        <p>{{ lesson.fullContent }}</p>
+        <iframe [src]="lesson.videoUrl | safe" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="lesson-navigation">
+        <button nbButton status="info" (click)="goToPreviousLesson()" [disabled]="lessonId === 1">Clase
+          Anterior</button>
+        <button nbButton status="info" (click)="goToCourseContent()">Ver Temario</button>
+        <button nbButton status="info" (click)="goToNextLesson()"
+          [disabled]="course && lessonId === course.lessons.length">Siguiente Clase</button>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>
+

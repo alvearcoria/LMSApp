@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MiscellaneousComponent } from './miscellaneous.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { access } from 'fs';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
 
 const routes: Routes = [
   {
@@ -13,6 +15,10 @@ const routes: Routes = [
         path: '404',
         component: NotFoundComponent,
       },
+      {
+        path: 'access-denied',
+        component: AccessDeniedComponent
+      }
     ],
   },
 ];

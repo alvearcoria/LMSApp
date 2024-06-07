@@ -1,0 +1,13 @@
+<div class="card-row">
+  <h1>Available Courses</h1>
+  <div class="card-col">
+    <nb-card *ngFor="let course of courses" class="course-card" size="small" status="success">
+      <nb-card-header>{{ course.title }}</nb-card-header>
+      <nb-card-body>
+        <img [src]="course.image" alt="{{ course.title }}" class="course-image">
+        <p>{{ course.description }}</p>
+        <button nbButton status="primary" (click)="viewCourseContent(course.id)">Ver Contenido</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

@@ -3,11 +3,13 @@ import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeServ
 
 import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
-import { map, takeUntil } from 'rxjs/operators';
+import { filter, map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { AuthService } from '../../../auth/auth.service';
+import { title } from 'process';
 
 @Component({
-  selector: 'ngx-header',
+  selector: 'lms-header',
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
@@ -45,11 +47,24 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private themeService: NbThemeService,
               private userService: UserData,
               private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+            private auth: AuthService) {
   }
 
   ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
+
+    /* this.menuService.onItemClick().pipe(
+      filter(({ tag }) => tag === 'my-context-menu'),
+      map(({ item: { title } }) => title),
+    ).subscribe(title => {
+      console.log('title: ', title); // Log para depuración
+      if (title === 'Log out') {
+        this.auth.logout();
+        // Redirigir al usuario a la página de inicio de sesión
+        //this.router.navigate(['/auth/login']);
+      }
+    }); */
 
     this.userService.getUsers()
       .pipe(takeUntil(this.destroy$))
@@ -69,6 +84,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe(themeName => this.currentTheme = themeName);
+
+      this.menuService.onItemClick().pipe(filter(({tag}) => tag === 'my-context-menu'),);
+
   }
 
   ngOnDestroy() {

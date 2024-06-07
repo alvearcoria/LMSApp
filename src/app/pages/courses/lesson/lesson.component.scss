@@ -1,0 +1,15 @@
+.lesson {
+  .lesson-content {
+    margin-bottom: 20px;
+
+    iframe {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+  }
+}

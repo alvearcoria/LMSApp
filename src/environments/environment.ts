@@ -10,7 +10,7 @@
 
 export const environment = {
   production: false,
-  firebaseConfig : {
+  firebase : {
     apiKey: "AIzaSyDJQ3XnmfElGlfcgv_Eo83ti6AWZL5GiZc",
     authDomain: "lmsapp-9103d.firebaseapp.com",
     databaseURL: "https://lmsapp-9103d-default-rtdb.firebaseio.com",

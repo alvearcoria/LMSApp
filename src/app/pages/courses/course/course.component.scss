@@ -1,0 +1,29 @@
+.course {
+  .lessons {
+    margin-top: 20px;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    nb-accordion-item {
+      margin-bottom: 10px;
+
+      nb-accordion-item-header {
+        background-color: #6b82fb;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      nb-accordion-item-body {
+        padding: 20px;
+        background-color: #f7f9fc;
+      }
+    }
+  }
+
+    nb-progress-bar {
+      margin-top: 10px;
+      width: 100%;
+    }
+}

@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngx-footer',
+  selector: 'lms-footer',
   styleUrls: ['./footer.component.scss'],
   template: `
     <span class="created-by">
-      Created with ♥ by <b><a href="https://akveo.page.link/8V2f" target="_blank">Akveo</a></b> 2019
+      Created with ♥ by <b><a href="" target="_blank">Alvear</a></b> 2024
     </span>
-    <div class="socials">
+<!--     <div class="socials">
       <a href="#" target="_blank" class="ion ion-social-github"></a>
       <a href="#" target="_blank" class="ion ion-social-facebook"></a>
       <a href="#" target="_blank" class="ion ion-social-twitter"></a>
       <a href="#" target="_blank" class="ion ion-social-linkedin"></a>
-    </div>
+    </div> -->
   `,
 })
 export class FooterComponent {
